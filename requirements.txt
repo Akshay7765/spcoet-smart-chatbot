@@ -16,7 +16,7 @@ anthropic==0.39.0          # Claude AI (primary)
 openai==1.51.0             # OpenAI GPT (alternative)
 
 # ── NLP ────────────────────────────────────────────────────────
-spacy==3.7.6               # NLP pipeline (entities, tokens, lemmas)
+spacy==3.7.2               # NLP pipeline (entities, tokens, lemmas)
 nltk==3.9.1                # NLTK (stopwords, lemmatizer, tokenizer)
 
 # ── Embeddings (FREE — no API key needed) ─────────────────────
