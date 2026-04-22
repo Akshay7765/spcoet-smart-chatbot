@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPCOET Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body class="admin-body">
+
+<nav class="admin-nav">
+  <div class="nav-brand">
+    <div class="logo-badge" style="width:34px;height:34px;font-size:14px">SP</div>
+    <div>
+      <div style="color:#fff;font-weight:700;font-size:14px">SPCOET Admin</div>
+      <div style="color:rgba(255,255,255,0.65);font-size:11px">Knowledge Base Manager</div>
+    </div>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="loadStats()">📊 Refresh Stats</button>
+    <a href="/" class="nav-btn">💬 Open Chatbot</a>
+  </div>
+</nav>
+
+<div class="admin-page">
+
+  <!-- Key Input Bar -->
+  <div class="key-bar">
+    <label style="font-size:12px;font-weight:600;color:#5A5248;white-space:nowrap">Admin Key:</label>
+    <input type="password" id="admin-key" placeholder="Enter admin key from .env" class="key-input" value="spcoet-admin-2024">
+    <button class="btn-pri" onclick="loadStats()">🔓 Unlock</button>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num" id="s-msgs">—</div><div class="stat-lbl">Total Messages</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-chunks">—</div><div class="stat-lbl">KB Chunks (FAISS)</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-resp">—</div><div class="stat-lbl">Avg Response (ms)</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-ai">—</div><div class="stat-lbl">AI Status</div></div>
+  </div>
+
+  <!-- Intent Chart -->
+  <div class="admin-card">
+    <div class="admin-card-title">📊 Top Intents Detected</div>
+    <div id="intent-chart" class="intent-chart"></div>
+  </div>
+
+  <div class="admin-two-col">
+
+    <!-- Update KB -->
+    <div class="admin-card">
+      <div class="admin-card-title">✏️ Update Knowledge Base</div>
+      <div class="field">
+        <label>Section</label>
+        <select id="upd-section">
+          <option value="courses">courses</option>
+          <option value="admission">admission</option>
+          <option value="fees">fees</option>
+          <option value="placements">placements</option>
+          <option value="facilities">facilities</option>
+          <option value="faculty">faculty</option>
+          <option value="contact">contact</option>
+          <option value="events">events</option>
+          <option value="college_overview">college_overview</option>
+          <option value="custom">custom (type below)</option>
+        </select>
+      </div>
+      <div class="field" id="custom-section-wrap" style="display:none">
+        <label>Custom Section Name</label>
+        <input type="text" id="custom-section" placeholder="e.g. transport_routes">
+      </div>
+      <div class="field">
+        <label>Action</label>
+        <select id="upd-action">
+          <option value="update">Update (replace)</option>
+          <option value="add">Add (append)</option>
+          <option value="delete">Delete section</option>
+        </select>
+      </div>
+      <div class="field" id="content-wrap">
+        <label>Content</label>
+        <textarea id="upd-content" rows="6" placeholder="Enter new content for this section…"></textarea>
+        <div style="font-size:11px;color:#9A918A;margin-top:4px">After saving, FAISS index is automatically rebuilt.</div>
+      </div>
+      <button class="btn-pri" style="width:100%" onclick="updateKB()">💾 Save to Knowledge Base</button>
+      <div id="upd-result" class="result-box" style="display:none"></div>
+    </div>
+
+    <!-- View KB Sections -->
+    <div class="admin-card">
+      <div class="admin-card-title">📋 Knowledge Base Sections</div>
+      <button class="btn-sec" onclick="loadKBSections()" style="margin-bottom:12px">🔄 Load Sections</button>
+      <div id="kb-sections-list"></div>
+    </div>
+
+  </div>
+
+  <!-- Test Chatbot -->
+  <div class="admin-card">
+    <div class="admin-card-title">🧪 Test Chatbot API</div>
+    <div class="field">
+      <label>Test Message</label>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="test-msg" placeholder="Type a test question…" style="flex:1" onkeydown="if(event.key==='Enter')testChat()">
+        <select id="test-lang" style="width:80px">
+          <option value="en">EN</option>
+          <option value="hi">HI</option>
+          <option value="mr">MR</option>
+        </select>
+        <button class="btn-pri" onclick="testChat()">▶ Send</button>
+      </div>
+    </div>
+    <div id="test-result" class="test-result-box" style="display:none"></div>
+  </div>
+
+</div>
+
+<script>
+const getKey = () => document.getElementById('admin-key').value;
+
+// ── Section select handler ──
+document.getElementById('upd-section').addEventListener('change', function() {
+  document.getElementById('custom-section-wrap').style.display = this.value==='custom'?'block':'none';
+});
+document.getElementById('upd-action').addEventListener('change', function() {
+  document.getElementById('content-wrap').style.display = this.value==='delete'?'none':'block';
+});
+
+// ── Load stats ──
+async function loadStats() {
+  try {
+    const r = await fetch('/admin/stats', { headers: { 'X-Admin-Key': getKey() } });
+    const d = await r.json();
+    if (!r.ok) { alert(d.error || 'Unauthorized'); return; }
+    document.getElementById('s-msgs').textContent   = d.stats.total_messages ?? '—';
+    document.getElementById('s-chunks').textContent = d.kb_info.total_chunks ?? '—';
+    document.getElementById('s-resp').textContent   = d.stats.avg_response_ms ?? '—';
+    document.getElementById('s-ai').textContent     = d.kb_info.st_available ? '✅ Ready' : '⚠ No Model';
+    renderIntentChart(d.stats.top_intents || []);
+  } catch(e) { console.error(e); }
+}
+
+function renderIntentChart(intents) {
+  const el = document.getElementById('intent-chart');
+  if (!intents.length) { el.innerHTML='<div style="color:#9A918A;font-size:13px;padding:12px">No data yet</div>'; return; }
+  const max = intents[0][1] || 1;
+  el.innerHTML = intents.map(([name,count]) => `
+    <div class="intent-bar-row">
+      <span class="intent-name">${name}</span>
+      <div class="intent-bar-track">
+        <div class="intent-bar-fill" style="width:${(count/max*100).toFixed(0)}%"></div>
+      </div>
+      <span class="intent-count">${count}</span>
+    </div>
+  `).join('');
+}
+
+// ── Update KB ──
+async function updateKB() {
+  const section = document.getElementById('upd-section').value === 'custom'
+    ? document.getElementById('custom-section').value
+    : document.getElementById('upd-section').value;
+  const action  = document.getElementById('upd-action').value;
+  const content = document.getElementById('upd-content').value;
+  if (!section) { alert('Section is required'); return; }
+  const btn = event.target; btn.textContent = '⏳ Saving...'; btn.disabled = true;
+  try {
+    const r = await fetch('/admin', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ section, content, action, admin_key: getKey() })
+    });
+    const d = await r.json();
+    const box = document.getElementById('upd-result');
+    box.style.display = 'block';
+    box.className = 'result-box ' + (r.ok ? 'success' : 'error');
+    box.textContent = r.ok ? `✅ ${d.message}` : `❌ ${d.error}`;
+    if (r.ok) loadStats();
+  } catch(e) { alert('Error: ' + e.message); }
+  finally { btn.textContent = '💾 Save to Knowledge Base'; btn.disabled = false; }
+}
+
+// ── Load KB sections ──
+async function loadKBSections() {
+  const r = await fetch('/data');
+  const d = await r.json();
+  const el = document.getElementById('kb-sections-list');
+  el.innerHTML = (d.sections || []).map(s => `
+    <div class="section-item">
+      <span class="section-name">📁 ${s}</span>
+      <button class="btn-sm" onclick="fetchSection('${s}')">View</button>
+    </div>
+  `).join('');
+}
+
+async function fetchSection(section) {
+  const r = await fetch(`/data?section=${section}`);
+  const d = await r.json();
+  const el = document.getElementById('kb-sections-list');
+  el.innerHTML += `<div class="section-preview"><pre>${JSON.stringify(d[section]||d, null, 2).substring(0,800)}…</pre></div>`;
+}
+
+// ── Test chat ──
+async function testChat() {
+  const msg  = document.getElementById('test-msg').value.trim();
+  const lang = document.getElementById('test-lang').value;
+  if (!msg) return;
+  const box = document.getElementById('test-result');
+  box.style.display = 'block';
+  box.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+  try {
+    const r = await fetch('/chat', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ message: msg, lang, session_id: 'admin-test' })
+    });
+    const d = await r.json();
+    box.innerHTML = `
+      <div class="test-meta">
+        <span class="badge intent-badge">${d.intent} (${(d.confidence*100).toFixed(0)}%)</span>
+        <span class="badge sub-badge">${d.sub_intent || 'no sub-intent'}</span>
+        <span class="badge time-badge">${d.response_time}ms</span>
+        <span class="badge ctx-badge">context: ${d.used_context ? 'yes' : 'no'}</span>
+      </div>
+      <div class="test-reply">${d.reply}</div>
+      <div class="test-sources"><strong>Sources:</strong> ${(d.sources||[]).map(s=>`${s.section}(${s.score})`).join(', ')||'none'}</div>
+      <div class="test-suggestions"><strong>Suggestions:</strong> ${(d.suggestions||[]).join(' · ')}</div>
+    `;
+  } catch(e) { box.innerHTML = `<span style="color:red">Error: ${e.message}</span>`; }
+}
+
+window.onload = loadStats;
+</script>
+</body>
+</html>

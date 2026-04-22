@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPCOET Smart AI Chatbot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- ── SIDEBAR ── -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-badge">SP</div>
+    <div>
+      <div class="logo-name">SPCOET</div>
+      <div class="logo-sub">Smart AI Assistant</div>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Quick Topics</div>
+    <button class="sidebar-btn" onclick="quickAsk('Tell me about courses offered at SPCOET')">📚 Courses</button>
+    <button class="sidebar-btn" onclick="quickAsk('What is the admission process for BE?')">🎓 Admission</button>
+    <button class="sidebar-btn" onclick="quickAsk('What are the fees for engineering courses?')">💰 Fees</button>
+    <button class="sidebar-btn" onclick="quickAsk('Tell me about placement statistics and companies')">💼 Placements</button>
+    <button class="sidebar-btn" onclick="quickAsk('What hostel facilities are available?')">🏠 Hostel</button>
+    <button class="sidebar-btn" onclick="quickAsk('What campus facilities does SPCOET have?')">🏋️ Facilities</button>
+    <button class="sidebar-btn" onclick="quickAsk('Tell me about the faculty at SPCOET')">👨‍🏫 Faculty</button>
+    <button class="sidebar-btn" onclick="quickAsk('How to contact SPCOET?')">📞 Contact</button>
+    <button class="sidebar-btn" onclick="quickAsk('What events and activities happen at SPCOET?')">🎉 Events</button>
+    <button class="sidebar-btn" onclick="quickAsk('Tell me about scholarship opportunities')">🏆 Scholarships</button>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Language</div>
+    <div class="lang-row">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" data-lang="hi" onclick="setLang('hi',this)">हि</button>
+      <button class="lang-btn" data-lang="mr" onclick="setLang('mr',this)">म</button>
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <a href="/admin-panel" class="admin-link">⚙️ Admin Panel</a>
+    <a href="/health" class="admin-link" target="_blank">🟢 Health Check</a>
+    <div class="kb-status" id="kb-status">Loading...</div>
+  </div>
+</div>
+
+<!-- ── MAIN CHAT ── -->
+<div class="main">
+
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <div class="mobile-title">SPCOET AI Assistant</div>
+    <button class="new-chat-btn" onclick="newChat()">✏️</button>
+  </div>
+
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <div class="bot-avatar-lg">SP</div>
+      <div>
+        <div class="chat-title">SPCOET Smart AI Chatbot</div>
+        <div class="chat-subtitle">
+          <span class="online-dot"></span>
+          Online · Powered by Claude AI + FAISS Semantic Search
+        </div>
+      </div>
+    </div>
+    <div class="chat-header-right">
+      <button class="header-btn" onclick="newChat()" title="New chat">✏️ New Chat</button>
+      <button class="header-btn" onclick="toggleInfo()" title="Info">ℹ️ Info</button>
+    </div>
+  </div>
+
+  <!-- Info Banner (hidden by default) -->
+  <div class="info-banner" id="info-banner" style="display:none">
+    <div class="info-grid">
+      <div class="info-item"><span>🤖</span><span>Claude AI (LLM)</span></div>
+      <div class="info-item"><span>🔍</span><span>FAISS Semantic Search</span></div>
+      <div class="info-item"><span>🧠</span><span>spaCy NLP + NLTK</span></div>
+      <div class="info-item"><span>💾</span><span>Context Memory (5 turns)</span></div>
+      <div class="info-item"><span>🎙️</span><span>Voice Input/Output</span></div>
+      <div class="info-item"><span>🌐</span><span>EN / हिंदी / मराठी</span></div>
+    </div>
+  </div>
+
+  <!-- Messages Container -->
+  <div class="messages-container" id="messages">
+    <!-- Welcome Message (injected by JS) -->
+  </div>
+
+  <!-- Suggestions Row -->
+  <div class="suggestions-row" id="suggestions-row" style="display:none">
+    <div class="suggestions-label">Suggested questions:</div>
+    <div class="suggestions-chips" id="suggestions-chips"></div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-area">
+    <!-- Confidence bar (shown after reply) -->
+    <div class="confidence-bar" id="confidence-bar" style="display:none">
+      <div class="confidence-info">
+        <span id="conf-intent"></span>
+        <span id="conf-score"></span>
+      </div>
+      <div class="confidence-track">
+        <div class="confidence-fill" id="conf-fill"></div>
+      </div>
+    </div>
+
+    <!-- Voice status -->
+    <div class="voice-indicator" id="voice-indicator" style="display:none">
+      <div class="voice-bars"><span></span><span></span><span></span><span></span></div>
+      <span id="voice-status-text">Listening…</span>
+      <button onclick="stopListening()" class="voice-stop-btn">■ Stop</button>
+    </div>
+
+    <!-- Text input row -->
+    <div class="input-row">
+      <button class="icon-btn voice-btn" id="mic-btn" onclick="toggleVoice()" title="Voice input">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 15.2 14.47 17 12 17s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V21c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>
+      </button>
+
+      <textarea
+        id="user-input"
+        rows="1"
+        placeholder="Ask anything about SPCOET — courses, fees, admission, placements…"
+        onkeydown="handleKeyDown(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+
+      <button class="icon-btn send-btn" id="send-btn" onclick="sendMessage()" title="Send">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+    <div class="input-footer">
+      Press <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for newline · 
+      <span id="char-count">0</span>/500 chars
+    </div>
+  </div>
+
+</div>
+
+<!-- ── OVERLAY (mobile sidebar) ── -->
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<script src="/static/js/chat.js"></script>
+</body>
+</html>

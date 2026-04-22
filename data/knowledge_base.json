@@ -1,0 +1,279 @@
+{
+  "college_overview": {
+    "name": "Sharadchandra Pawar College of Engineering and Technology",
+    "short_name": "SPCOET",
+    "location": "Someshwarnagar, Tal. Baramati, Dist. Pune, Maharashtra – 413 102",
+    "managed_by": "Shri Someshwar Shikshan Prasarak Mandal",
+    "affiliated_to": "Savitribai Phule Pune University (SPPU), Pune",
+    "approved_by": "AICTE New Delhi and Government of Maharashtra",
+    "accreditation": "NAAC Accredited Institution",
+    "website": "https://www.secsomeshwar.ac.in",
+    "established": "College provides quality technical education since its establishment",
+    "about": "Sharadchandra Pawar College of Engineering and Technology (SPCOET) is a premier technical institute located at Someshwarnagar, Baramati, Pune. Managed by Shri Someshwar Shikshan Prasarak Mandal, the college is approved by AICTE New Delhi and affiliated to Savitribai Phule Pune University (SPPU), Pune. The college is NAAC accredited and offers quality technical education to students from Maharashtra and beyond.",
+    "vision": "To be a globally recognized institution producing competent, ethical and socially responsible engineers and managers.",
+    "mission": "To provide quality technical education through innovative teaching-learning processes, industry collaboration, and value-based education to produce skilled professionals who contribute to society."
+  },
+  "contact": {
+    "phone": "9823141287",
+    "alternate_phone": "02112-XXXXXX",
+    "email": "principal@secsomeshwar.ac.in",
+    "admissions_email": "admissions@secsomeshwar.ac.in",
+    "address": "Someshwarnagar, Tal. Baramati, Dist. Pune, Maharashtra – 413 102",
+    "website": "https://www.secsomeshwar.ac.in",
+    "office_hours": "Monday to Saturday: 9:00 AM – 5:00 PM",
+    "nearest_railway": "Baramati Railway Station (approximately 5 km from college)",
+    "nearest_bus_stand": "Baramati ST Bus Stand (approximately 4 km from college)",
+    "directions": "The college is located at Someshwarnagar, which is easily accessible from Baramati city. Take the Baramati-Indapur Road and look for SSPM campus signs.",
+    "google_maps": "https://maps.google.com/?q=SPCOET+Someshwarnagar",
+    "social_media": "Follow SPCOET on social media for latest updates and notifications."
+  },
+  "courses": {
+    "ug_programs": {
+      "overview": "SPCOET offers 4-year Bachelor of Engineering (B.E.) programs in multiple disciplines, all affiliated to Savitribai Phule Pune University (SPPU), Pune and approved by AICTE.",
+      "departments": [
+        {
+          "name": "Computer Engineering (B.E.)",
+          "intake": "60 students per year",
+          "duration": "4 years (8 semesters)",
+          "details": "Computer Engineering covers software development, data structures, algorithms, databases, web technologies, artificial intelligence, machine learning, cloud computing, cybersecurity, and software engineering. Career opportunities include software developer, data scientist, AI engineer, web developer, system analyst, and IT consultant at companies like TCS, Infosys, Wipro, Google, Microsoft.",
+          "labs": "Programming Lab, Data Science Lab, Networking Lab, AI/ML Lab, Project Lab",
+          "key_subjects": "Data Structures, DBMS, Operating Systems, Computer Networks, Software Engineering, Web Technology, AI, Machine Learning, Cloud Computing"
+        },
+        {
+          "name": "Mechanical Engineering (B.E.)",
+          "intake": "60 students per year",
+          "duration": "4 years (8 semesters)",
+          "details": "Mechanical Engineering covers design, manufacturing, thermodynamics, fluid mechanics, material science, CAD/CAM, robotics, and industrial engineering. Career options include design engineer, production engineer, automotive engineer, HVAC engineer in companies like Tata Motors, Mahindra, Bosch, Thermax, Cummins.",
+          "labs": "Machine Shop, Thermal Lab, Fluid Mechanics Lab, CAD Lab, Metrology Lab",
+          "key_subjects": "Engineering Drawing, Thermodynamics, Manufacturing Processes, Machine Design, CAD/CAM, Robotics, Industrial Engineering"
+        },
+        {
+          "name": "Civil Engineering (B.E.)",
+          "intake": "60 students per year",
+          "duration": "4 years (8 semesters)",
+          "details": "Civil Engineering focuses on structural analysis, construction technology, surveying, transportation, water resources, environmental engineering, and project management. Career opportunities in construction companies, government PWD, NHAI, municipal corporations, real estate companies.",
+          "labs": "Concrete Technology Lab, Surveying Lab, Soil Testing Lab, Transportation Lab, GIS Lab",
+          "key_subjects": "Structural Analysis, Concrete Technology, Surveying, Geotechnical Engineering, Transportation Engineering, Environmental Engineering"
+        },
+        {
+          "name": "Electrical Engineering (B.E.)",
+          "intake": "60 students per year",
+          "duration": "4 years (8 semesters)",
+          "details": "Electrical Engineering covers power systems, electrical machines, control systems, power electronics, renewable energy, and industrial automation. Career opportunities in MSEDCL, NTPC, power plants, manufacturing industries, automation companies.",
+          "labs": "Electrical Machines Lab, Power Electronics Lab, Control Systems Lab, Measurement Lab, High Voltage Lab",
+          "key_subjects": "Electrical Machines, Power Systems, Control Systems, Power Electronics, Microprocessors, Renewable Energy"
+        },
+        {
+          "name": "Humanities and Science (First Year Engineering)",
+          "details": "All first-year engineering students study common subjects including Mathematics, Physics, Chemistry, Engineering Graphics, Basic Electrical Engineering, Programming Fundamentals, and Communication Skills before branching into specific departments in second year."
+        }
+      ]
+    },
+    "pg_programs": {
+      "overview": "SPCOET offers postgraduate program in management.",
+      "departments": [
+        {
+          "name": "Master of Business Administration (MBA)",
+          "intake": "60 students per year",
+          "duration": "2 years (4 semesters)",
+          "details": "MBA program covers marketing management, financial management, human resource management, operations management, entrepreneurship, business analytics, and strategic management. Admission through MAH-MBA CET or CAT score. MBA 2026-27 admission process is ongoing.",
+          "specializations": "Marketing, Finance, Human Resource Management, Operations",
+          "eligibility": "Bachelor's degree in any discipline with minimum 50% marks. MAH-MBA CET / CAT score required."
+        }
+      ]
+    }
+  },
+  "admission": {
+    "overview": "SPCOET admissions are conducted through the Maharashtra State CET Cell's Centralized Admission Process (CAP). Institute-level management quota seats are also available.",
+    "be_admission": {
+      "process": "Step 1: Register on Maharashtra State CET Cell portal (cetcell.mahacet.org). Step 2: Appear for MHT-CET or JEE Main examination. Step 3: Fill CAP form with preferences. Step 4: Attend merit rounds (CAP Round 1, 2, 3). Step 5: Confirm seat by paying fees. Step 6: Report to college with documents.",
+      "eligibility": "Passed 10+2 (HSC) with Physics, Chemistry, and Mathematics. Minimum 45% marks (40% for reserved categories). Valid MHT-CET or JEE Main score required. Maharashtra domicile preferred for state quota.",
+      "lateral_entry": "Diploma holders can apply for direct second-year (lateral entry) admission through Maharashtra Diploma CET (MH-CET for Diploma)."
+    },
+    "mba_admission": {
+      "process": "Appear for MAH-MBA CET or CAT. Register on CET Cell portal. Fill MBA CAP form. Attend GD/PI if required. Confirm seat and pay fees.",
+      "eligibility": "Bachelor's degree (any stream) with minimum 50% marks (45% for reserved). MAH-MBA CET or CAT score required."
+    },
+    "management_quota": {
+      "details": "Institute-level (management quota) seats are available for BE and MBA programs. Contact the college admission office directly at 9823141287 for management quota procedure and availability.",
+      "procedure": "Contact: 9823141287 or visit admissions office at Someshwarnagar campus."
+    },
+    "documents_required": [
+      "SSC (Class 10) Marksheet and Certificate",
+      "HSC (Class 12) Marksheet and Certificate",
+      "MHT-CET / JEE Main Scorecard",
+      "Domicile Certificate (Maharashtra)",
+      "Nationality Certificate",
+      "Caste Certificate (if applicable — SC/ST/OBC/NT/SBC)",
+      "Caste Validity Certificate (for reserved categories)",
+      "Income Certificate (for EBC/EWS)",
+      "Aadhaar Card (mandatory)",
+      "8 Passport Size Photographs",
+      "Transfer Certificate from previous institution",
+      "Migration Certificate (for students from other boards)",
+      "Gap Certificate (if applicable)",
+      "Medical Fitness Certificate"
+    ],
+    "important_dates": "CAP registration typically opens in June. MHT-CET exams in April-May. CAP rounds in July-August. Classes commence in August-September. Check official CET Cell website for exact dates each year.",
+    "current_notices": "Admissions are OPEN for Academic Year 2025-26. MBA Admission Process 2026-27 is also ongoing. Contact 9823141287 for details."
+  },
+  "fees": {
+    "overview": "Fee structure is approved by the Fee Regulating Authority (FRA), Maharashtra. Exact fees vary by academic year and category.",
+    "be_fees": {
+      "approximate": "BE programs: Approximately ₹85,000 to ₹1,20,000 per year (varies by branch and category). This includes tuition fee and development fee.",
+      "note": "Please visit secsomeshwar.ac.in/fee-structure or contact the college office at 9823141287 for the latest FRA-approved fee structure for your specific branch and category."
+    },
+    "mba_fees": {
+      "approximate": "MBA: Approximately ₹1,00,000 to ₹1,50,000 per year.",
+      "note": "Please contact the college at 9823141287 for exact current fees."
+    },
+    "hostel_fees": {
+      "approximate": "Hostel fees (including room and mess): Approximately ₹40,000 to ₹60,000 per year.",
+      "note": "Hostel fees vary by room type and facilities. Contact hostel office for current rates."
+    },
+    "scholarships": {
+      "government_scholarships": "Various Maharashtra State Government scholarships are available for SC, ST, OBC, NT, SBC, EBC, EWS categories. Students must apply through the Mahadbte scholarship portal.",
+      "merit_scholarships": "Merit scholarships for academically excellent students.",
+      "types": ["EBC (Economically Backward Class) Freeship", "OBC Post-Matric Scholarship", "SC/ST Government Scholarship", "Central Sector Scholarship", "Post-Matric Scholarship"],
+      "application": "Apply through MahaDBTE scholarship portal. Deadline is usually in October-November each academic year."
+    }
+  },
+  "placements": {
+    "overview": "SPCOET has an active Training and Placement (T&P) Cell dedicated to ensuring good career opportunities for students. The T&P Cell organizes pre-placement training, industry interactions, and campus recruitment drives.",
+    "statistics": {
+      "placement_percentage": "Approximately 75-85% of eligible students placed",
+      "highest_package": "Up to ₹12 LPA (recent years)",
+      "average_package": "₹3.5 to ₹5 LPA",
+      "note": "Statistics vary by year and branch. Visit secsomeshwar.ac.in/placements for latest data."
+    },
+    "tp_cell": {
+      "activities": "The T&P Cell conducts aptitude training, soft skills development, group discussion practice, mock interviews, resume writing workshops, communication skills training, technical interview preparation, and GATE exam guidance.",
+      "industry_visits": "Regular industrial visits are organized to help students understand real-world work environments.",
+      "internships": "Students are encouraged to do summer internships in reputed companies."
+    },
+    "major_recruiters": [
+      "TCS (Tata Consultancy Services)", "Infosys", "Wipro", "Capgemini",
+      "Cognizant", "Tech Mahindra", "HCL Technologies", "Mphasis",
+      "Tata Motors", "Mahindra & Mahindra", "Bosch", "Thermax",
+      "L&T (Larsen & Toubro)", "Cummins India", "Forbes Marshall",
+      "KPIT Technologies", "Persistent Systems", "Hexaware",
+      "Various Maharashtra Government departments and PSUs"
+    ],
+    "pre_placement_training": "Comprehensive training covering: Quantitative Aptitude, Logical Reasoning, Verbal Ability, Technical Knowledge (DSA, DBMS, OS), Soft Skills, Personality Development, Group Discussion, Personal Interview skills."
+  },
+  "facilities": {
+    "library": {
+      "overview": "Central library with extensive collection of technical books, reference books, national and international journals.",
+      "collection": "25,000+ books, 100+ national and international journals, digital library access, NPTEL course materials",
+      "digital_resources": "Online databases, e-journals, IEEE digital library access, DELNET membership",
+      "timings": "Library is open Monday to Saturday: 8:00 AM to 8:00 PM",
+      "capacity": "Reading room with capacity for 200+ students simultaneously"
+    },
+    "computer_labs": {
+      "overview": "6 fully equipped computer laboratories with latest hardware and licensed software",
+      "systems": "300+ computers with high-speed internet connectivity",
+      "software": "MATLAB, AutoCAD, Ansys, MS Office, programming tools (Python, Java, C++), database management tools",
+      "internet": "24x7 high-speed WiFi internet access throughout campus",
+      "smart_classrooms": "Smart classrooms equipped with projectors and interactive boards"
+    },
+    "hostel": {
+      "boys_hostel": {
+        "capacity": "Approximately 150 students",
+        "facilities": "Furnished rooms (single/double/triple), 24-hour security, CCTV surveillance, WiFi internet, mess facility with nutritious meals, water purifier, laundry facility, indoor games room",
+        "location": "On-campus within walking distance from academic building"
+      },
+      "girls_hostel": {
+        "capacity": "Approximately 100 students",
+        "facilities": "Separate secured block with lady warden, furnished rooms, CCTV, WiFi, mess facility, medical facility, common room",
+        "security": "24-hour security with female security staff"
+      },
+      "mess": "Hygienic mess facility serving breakfast, lunch, snacks, and dinner. Monthly mess charges included in hostel fees. Vegetarian and nutritious meals."
+    },
+    "sports": {
+      "outdoor_sports": "Cricket ground, football ground, volleyball court, basketball court, kabaddi ground, athletics track",
+      "indoor_sports": "Badminton court, table tennis, chess, carrom",
+      "gymnasium": "Well-equipped gymnasium with modern fitness equipment",
+      "sports_activities": "Annual sports day, inter-collegiate tournaments, participation in SPPU sports events"
+    },
+    "auditorium": {
+      "capacity": "500+ students",
+      "facilities": "Air-conditioned, advanced audio-visual system, projector screens, stage with lighting, used for seminars, conferences, cultural events, placements drives"
+    },
+    "canteen": {
+      "overview": "On-campus canteen serving hygienic, affordable food",
+      "timings": "7:00 AM to 7:00 PM",
+      "menu": "Breakfast, lunch, snacks, tea/coffee, cold beverages",
+      "capacity": "Can accommodate 200+ students"
+    },
+    "transport": {
+      "overview": "College bus service available from Baramati and nearby areas",
+      "routes": "Routes covering Baramati city, Indapur, Lonand, Khandala, Shetphalgade and surrounding villages",
+      "timing": "Buses operate morning and evening matching college schedule",
+      "pass": "Annual/semester bus passes available at subsidized rates"
+    },
+    "other_facilities": {
+      "medical_room": "First-aid and medical room with basic medical facilities",
+      "atm": "ATM facility on campus",
+      "stationery_shop": "Stationery and reprography shop on campus",
+      "seminar_halls": "Multiple seminar halls for workshops, guest lectures, and department events",
+      "wifi": "Free WiFi throughout campus for students and staff",
+      "nss_room": "NSS (National Service Scheme) dedicated room and activity space",
+      "placement_cell": "Dedicated placement cell office with interview rooms"
+    }
+  },
+  "faculty": {
+    "overview": "SPCOET has a team of highly qualified and experienced faculty members. The college maintains a healthy faculty-to-student ratio to ensure personalized attention.",
+    "statistics": "85+ qualified faculty members. 40%+ hold Ph.D. degrees. Faculty with industry experience in addition to academic qualifications. Faculty-student ratio approximately 1:15.",
+    "development": "Faculty regularly attend FDPs (Faculty Development Programs), workshops, seminars, and conferences. Faculty publish research papers in national and international journals.",
+    "hods": {
+      "note": "For specific HOD names and contact details, please visit secsomeshwar.ac.in/administrative or call 9823141287"
+    },
+    "principal": {
+      "message": "The principal leads the institution with a vision of academic excellence, innovation, and holistic student development. For principal's message and contact, visit secsomeshwar.ac.in/principals-message"
+    }
+  },
+  "academics": {
+    "academic_calendar": "Odd Semester: July to November (Exams in November). Even Semester: December to April/May (Exams in April/May). Summer vacations: June-July. Winter break: December-January.",
+    "examination": "University examinations conducted by SPPU. Internal assessments include unit tests, class tests, assignments, and practicals. Results on SPPU portal.",
+    "nptel": "SPCOET is a NPTEL (National Programme on Technology Enhanced Learning) local chapter. Students can pursue free online certification courses from IITs and IISc through NPTEL.",
+    "gate_preparation": "College provides GATE exam preparation guidance and resources for students aspiring for higher studies (M.Tech) or PSU jobs.",
+    "committees": "Various academic committees: Examination Committee, Academic Monitoring Committee, IQAC (Internal Quality Assurance Cell), Anti-Ragging Committee, Grievance Redressal Committee, SC/ST Cell, Women's Grievance Cell.",
+    "iqac": "Internal Quality Assurance Cell (IQAC) actively monitors and improves academic quality, faculty development, and infrastructure.",
+    "naac": "The college is NAAC accredited. NAAC certificate and AQAR reports available on official website."
+  },
+  "events": {
+    "technical_events": {
+      "technothon": "TECHNOTHON is SPCOET's annual national-level technical festival. It features coding competitions, hackathons, paper presentations, project exhibitions, and technical quizzes. Open to engineering students from all colleges.",
+      "workshops": "Regular technical workshops on topics like Python programming, IoT, Machine Learning, CAD/CAM, embedded systems, web development.",
+      "hackathons": "Internal and inter-college coding competitions and hackathons organized by departments."
+    },
+    "cultural_events": {
+      "somotsav": "SOMOTSAV is the grand annual cultural festival of SPCOET at the SSPM campus. Features dance competitions, music events, dramatics, literary events, fun games, and star performances.",
+      "freshers_welcome": "Grand fresher's welcome program organized for first-year students each academic year.",
+      "farewell": "Farewell function for outgoing students organized by junior batches."
+    },
+    "other_activities": {
+      "nss": "NSS (National Service Scheme) unit with 200+ enrolled volunteers. Annual NSS camp, blood donation drives, tree plantation, village adoption program, awareness campaigns.",
+      "sports_day": "Annual sports day with competitions in various indoor and outdoor sports.",
+      "industry_visits": "Regular educational and industrial visits to factories, research institutes, and companies.",
+      "alumni_meet": "Annual alumni meet to reconnect graduates with the college.",
+      "current_notices": [
+        "Indian Constitution Awareness Quiz 2025-26 — Registration open",
+        "NSS Camp 2025-26 — Annual NSS camp conducted successfully",
+        "MBA Admission Process 2026-27 — Applications being accepted",
+        "Induction Program 2025-26 — Inaugurated successfully",
+        "Academic Year 2025-26 Admission — Open now"
+      ]
+    }
+  },
+  "nss": {
+    "overview": "NSS (National Service Scheme) at SPCOET is a social service program with 200+ enrolled student volunteers. NSS helps students develop social responsibility, community service spirit, and leadership skills.",
+    "activities": "Annual 7-day NSS camp in an adopted village, blood donation drives (2-3 per year), tree plantation drives, Swachh Bharat Abhiyan, health awareness camps, COVID-19 awareness (past), voter awareness programs, disaster relief activities.",
+    "benefits": "NSS participation earns activity points required for BE degree. Active NSS volunteers can get NSS certificates useful for competitive exams and higher studies."
+  },
+  "anti_ragging": {
+    "policy": "SPCOET has strict zero-tolerance anti-ragging policy as per UGC regulations. Any form of ragging is a serious offense and leads to immediate expulsion.",
+    "helpline": "National Anti-Ragging Helpline: 1800-180-5522 (24/7 toll-free). College anti-ragging committee: 9823141287.",
+    "reporting": "Any ragging incident should be immediately reported to the Anti-Ragging Committee, Principal's office, or the national helpline."
+  }
+}
