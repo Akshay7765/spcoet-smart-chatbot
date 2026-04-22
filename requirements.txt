@@ -1,33 +1,6 @@
-# ============================================================
-#  SPCOET Smart AI Chatbot — Python Dependencies
-#  Install: pip install -r requirements.txt
-# ============================================================
-
-# ── Web Framework ──────────────────────────────────────────────
-flask==3.0.3
-flask-cors==4.0.1
-flask-limiter==3.7.0
-
-# ── Environment Variables ──────────────────────────────────────
-python-dotenv==1.0.1
-
-# ── AI APIs ────────────────────────────────────────────────────
-anthropic==0.39.0          # Claude AI (primary)
-openai==1.51.0             # OpenAI GPT (alternative)
-
-# ── NLP ────────────────────────────────────────────────────────
-spacy==3.7.2               # NLP pipeline (entities, tokens, lemmas)
-nltk==3.9.1                # NLTK (stopwords, lemmatizer, tokenizer)
-
-# ── Embeddings (FREE — no API key needed) ─────────────────────
-sentence-transformers==3.1.1   # Semantic embeddings (all-MiniLM-L6-v2)
-
-# ── Vector Search ──────────────────────────────────────────────
-faiss-cpu==1.8.0           # FAISS vector similarity search (CPU version)
-                           # For GPU: use faiss-gpu instead
-
-# ── Scientific Computing ───────────────────────────────────────
+flask
+gunicorn
 numpy==1.26.4
-
-# ── Utilities ──────────────────────────────────────────────────
-requests==2.32.3
+spacy==3.7.2
+thinc==8.2.2
+blis==0.7.11
