@@ -1,33 +1,13 @@
-# ============================================================
-#  SPCOET Smart AI Chatbot — Python Dependencies
-#  Install: pip install -r requirements.txt
-# ============================================================
-
-# ── Web Framework ──────────────────────────────────────────────
 flask==3.0.3
 flask-cors==4.0.1
 flask-limiter==3.7.0
-
-# ── Environment Variables ──────────────────────────────────────
 python-dotenv==1.0.1
-
-# ── AI APIs ────────────────────────────────────────────────────
-anthropic==0.39.0          # Claude AI (primary)
-openai==1.51.0             # OpenAI GPT (alternative)
-
-# ── NLP ────────────────────────────────────────────────────────
-spacy==3.7.6               # NLP pipeline (entities, tokens, lemmas)
-nltk==3.9.1                # NLTK (stopwords, lemmatizer, tokenizer)
-
-# ── Embeddings (FREE — no API key needed) ─────────────────────
-sentence-transformers==3.1.1   # Semantic embeddings (all-MiniLM-L6-v2)
-
-# ── Vector Search ──────────────────────────────────────────────
-faiss-cpu==1.8.0           # FAISS vector similarity search (CPU version)
-                           # For GPU: use faiss-gpu instead
-
-# ── Scientific Computing ───────────────────────────────────────
+anthropic>=0.96.0
+openai==1.51.0
+spacy==3.7.4
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+nltk==3.9.1
+sentence-transformers==3.1.1
+faiss-cpu==1.8.0
 numpy==1.26.4
-
-# ── Utilities ──────────────────────────────────────────────────
 requests==2.32.3
