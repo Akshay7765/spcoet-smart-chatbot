@@ -1,28 +1,12 @@
-# SPCOET Smart AI Chatbot — Render/Railway compatible requirements
-# All packages have pre-built wheels for Python 3.11 (no C compilation)
-
-# Web Framework
 flask==3.0.3
 flask-cors==4.0.1
 flask-limiter==3.7.0
 python-dotenv==1.0.1
-
-# AI APIs
 anthropic>=0.96.0
 openai==1.51.0
-
-# NLP — pure Python, no compilation
 nltk==3.9.1
-
-# Embeddings — pre-built wheels available
 sentence-transformers==3.1.1
-
-# Vector Search — pre-built wheels available
 faiss-cpu==1.8.0
-
-# Scientific Computing
 numpy==1.26.4
-
-# Utilities
 requests==2.32.3
 gunicorn==21.2.0
