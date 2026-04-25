@@ -25,3 +25,4 @@ numpy==1.26.4
 
 # Utilities
 requests==2.32.3
+gunicorn==21.2.0
