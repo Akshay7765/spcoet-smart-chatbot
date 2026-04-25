@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: spcoet-smart-chatbot
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
+      python -m spacy download en_core_web_sm
+      python -m nltk.downloader stopwords wordnet
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --timeout 120
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
